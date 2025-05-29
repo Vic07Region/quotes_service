@@ -7,13 +7,13 @@ import (
 )
 
 type Config struct {
-	debug bool
+	Debug bool
 }
 
 func NewLogger(cfg Config) *zap.Logger {
 	var core zapcore.Core
 
-	switch cfg.debug {
+	switch cfg.Debug {
 	case false:
 		core = zapcore.NewCore(
 			zapcore.NewJSONEncoder(zap.NewProductionEncoderConfig()),

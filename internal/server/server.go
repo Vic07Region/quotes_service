@@ -29,7 +29,7 @@ func NewServer(addr string, debug bool) *Server {
 
 	r := mux.NewRouter()
 
-	srv.logger = logger.NewLogger(logger.Config{})
+	srv.logger = logger.NewLogger(logger.Config{debug})
 	srv.httpServer = &http.Server{
 		Addr:    addr,
 		Handler: r,
