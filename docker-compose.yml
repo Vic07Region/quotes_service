@@ -1,0 +1,11 @@
+
+services:
+  quotes-service:
+    build: .
+    image: quotes_service:latest
+    container_name: quotes-service
+    ports:
+      - "8080:8080"
+    environment:
+      - QS_RUN_HOST=${QS_RUN_HOST:-:8080}
+      - QS_DEBUG=${DEBUG:-false}
